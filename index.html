@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Sort Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Font Awesome for the Undo icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h1>Level: <span id="game-level">1</span></h1>
+    <div class="toggle-icon" id="toggle-icon">&#9776;</div> <!-- Toggle Icon -->
+    <div id="music-toggle"></div> <!-- Music Toggle Button -->
+    <div id="scoreboard">
+      <div class="score-item">
+        <span class="score-label">Score:</span>
+        <span id="current-score">0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Best:</span>
+        <span id="best-score">0</span>
+      </div>
+    </div>
+    <div class="game-area">
+        <div class="tube" data-tube="1"></div>
+        <div class="tube" data-tube="2"></div>
+        <div class="tube" data-tube="3"></div>
+        <div class="tube" data-tube="4"></div>
+    </div>
+    <!-- Undo Button with Font Awesome icon -->
+    <button id="undo-btn"> 
+    </button>
+    <!-- redo Button with Font Awesome icon -->
+    <button id="redo-btn"> 
+    </button>
+    <button id="reset-btn">Reset Game</button>
+</div>
+
+<!-- Win Popup -->
+<div id="win-popup" class="popup">
+    <div class="popup-content">
+        <h2>Congratulations!</h2>
+        <p>You've successfully sorted all the tubes!</p>
+        <div class="popup-buttons">
+            <button id="next-level-btn">Next Level</button>
+            <button id="close-popup-btn">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toggle Popup -->
+<div id="toggle-popup" class="popup">
+    <div class="popup-content">
+        <h2>Game Settings</h2>
+        <div class="toggle-options">
+            <div class="toggle-option">
+                <span>Music</span>
+                <button id="music-toggle-btn">Off</button>
+            </div>
+            <div class="toggle-option">
+                <span>Sound Effects</span>
+                <button id="sound-toggle-btn">Off</button>
+            </div>
+            <div class="toggle-option">
+                <span>Difficulty</span>
+                <select id="difficulty-select">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+        <button id="close-toggle-popup-btn">Close</button>
+    </div>
+</div>
+
+<!-- Background Music -->
+<audio id="bg-music" autoplay="autoplay" loop>
+    <source src="asset/bg-music.m4a" type="audio/m4a">
+    <source src="asset/bg-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script src="game.js"></script>
+</body>
